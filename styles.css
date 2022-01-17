@@ -1,0 +1,45 @@
+body {
+    font-size: 125%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
+}
+
+h1, h2 {
+    font-family: 'Merriweather';
+    margin-bottom: .5em;
+}
+
+nav {
+    background-color: white;
+    border-radius: .5em;
+    box-shadow: 0px 2px 4px 0 rgb(0 0 0 / 20%);
+    padding: 2em;
+    position: fixed;
+    left: 2em;
+    top: 2em;
+    bottom: 2em;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 50ms;
+}
+
+li {
+    list-style: none;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    border-bottom: 2px solid rgba(0,0,0,.2);
+    border-image-source: linear-gradient(to right, rgba(255, 0, 0, 0.3), rgba(0, 0, 255, 0.3));
+    border-image-slice: 1;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: red;
+}
