@@ -17,6 +17,11 @@ nav > h1 {
     text-align: center;
 }
 
+p {
+    padding-bottom: 1em;
+    line-height: 150%;
+}
+
 main {
     display: flex;
 }
