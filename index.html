@@ -41,23 +41,90 @@
                 </header>
                 <p>React (also known as React.js or ReactJS) is a free and open-source front-end <strong>JavaScript
                         library</strong> for building user
-                    interfaces based on UI components.</p>
+                    interfaces based on <strong><abbr title="User Interface">UI</abbr></strong> components.</p>
                 <p>It is maintained by <strong>Meta</strong> (formerly Facebook) and
                     a
                     community of individual
                     developers and companies.</p>
                 <p>React can be used as a base in the development of single-page or mobile
                     applications. However, React is only concerned with state management and rendering that state to the
-                    DOM, so
+                    <strong><abbr title="Document Object Model">DOM</abbr></strong>, so
                     creating React applications usually requires the use of additional libraries for routing, as well as
                     certain
-                    client-side functionality.</p>
+                    client-side functionality.
+                </p>
             </section>
             <section class="main-section"
                      id="JSX_Elements">
                 <header>
                     <h2>JSX Elements</h2>
                 </header>
+                <p>React applications are structured using a syntax called <abbr
+                          title="JavaScript Syntax Extension"><strong>JSX</strong></abbr>.
+                    This is the syntax of a basic <abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr>
+                    element.</p>
+                <code>
+                    <pre>
+                        &lt;div&gt;Hello React!&lt;/div&gt;
+                    </pre>
+                </code>
+                <p><abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is the most common way to
+                    structure React applications,
+                    but it is not required for React.</p>
+                <code>
+                    <pre>
+                        React.createElement('div', null, 'Hello React!'); // createElement syntax
+                    </pre>
+                </code>
+                <p>
+                    <abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is not understood by the
+                    browser. It needs to be compiled to plain JavaScript, which the browser can understand.
+                <p>The most commonly used compiler for <abbr
+                          title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is called Babel.</p>
+                </p>
+                <p>Inline styles can be added to <strong><abbr>JSX</abbr></strong> elements using the style attribute.
+                    And styles are updated within
+                    an object, not a set of double quotes, as with <strong><abbr
+                              title="Hyper Text Markup Language">HTML</abbr></strong>.</p>
+                <p>Note that style property names must be also written in camelcase.</p>
+                <code>
+                    <pre>
+                        &lt;h1 style={{ color: 'blue', fontSize: 22, padding: '0.5em 1em' }}&gt;
+                            Hello React!
+                          &lt;/h1&gt;
+                    </pre>
+                </code>
+                <p>All React apps require three things:</p>
+                <ul>
+                    <li>
+                        <p><strong>ReactDOM.render()</strong>: used to render (show) our app by mounting it onto an
+                            <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong> element
+                        </p>
+                    </li>
+                    <li>
+                        <p><strong>A <strong><abbr title="JavaScript Extension">JSX</abbr></strong> element</strong>:
+                            called a "root node", because it is the root of our
+                            application. Meaning, rendering it will render all children within it</p>
+                    </li>
+                    <li>
+                        <p><strong>An <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong>
+                                (<strong><abbr title="Document Object Model">DOM</abbr></strong>) element</strong>:
+                            Where the app is inserted within an <strong><abbr
+                                      title="Hyper Text Markup Language">HTML</abbr></strong> page. The
+                            element is usually a div with an id of "root", located in an index.html file.</p>
+                    </li>
+                </ul>
+                <code>
+                    <pre>
+                        import React from "react";<br>
+                        import ReactDOM from "react-dom";<br>
+                        <br>
+                        const App = &lt;h1&gt;Hello React!&lt;/h1&gt;<br>
+                        <br>
+                        ReactDOM.render(App, document.getElementById("root"));
+                    </pre>
+                </code>
+
             </section>
             <section class="main-section"
                      id="Components_and_Props">

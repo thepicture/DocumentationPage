@@ -10,14 +10,14 @@ body {
 
 h1, h2 {
     font-family: 'Merriweather';
-    margin-bottom: .5em;
+    margin: 1.5em 0;
 }
 
 nav > h1 {
     text-align: center;
 }
 
-p {
+p:not(:last-child) {
     padding-bottom: 1em;
     line-height: 150%;
 }
@@ -26,7 +26,7 @@ main {
     display: flex;
 }
 
-nav, main div {
+nav, main div, pre {
     background-color: white;
     border-radius: .5em;
     box-shadow: 0px 2px 4px 0 rgb(0 0 0 / 20%);
@@ -44,7 +44,7 @@ a {
     transition: all 50ms;
 }
 
-li {
+nav li {
     list-style: none;
     padding-bottom: 1em;
     padding-top: 1em;
@@ -56,4 +56,27 @@ li {
 a:hover {
     text-decoration: underline;
     color: red;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+code {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+pre {
+    background: rgb(0 0 0 / 3%);
+    white-space: normal;
+    font-family: monospace;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}
+
+section li {
+    padding: 1em 0;
+    margin-left: 4em;
 }
