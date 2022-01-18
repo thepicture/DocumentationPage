@@ -19,101 +19,109 @@
 
 <body>
     <main id="main-doc">
-        <nav id="navbar">
-            <header>
-                <h1>React documentation</h1>
-                <ul>
-                    <li><a href="#Introduction"
-                           class="nav-link">Introduction</a></li>
-                    <li><a href="#JSX_Elements"
-                           class="nav-link">JSX Elements</a></li>
-                    <li><a href="#Components_and_Props"
-                           class="nav-link">Components and Props</a></li>
-                    <li><a href="#List_and_Keys"
-                           class="nav-link">List and Keys</a></li>
-                    <li><a href="#Event_Listeners_and_Handling_Events"
-                           class="nav-link">Event Listeners and Handling Events</a></li>
-                    <li><a href="#State_and_useState"
-                           class="nav-link">State and useState</a></li>
-                </ul>
-            </header>
-        </nav>
-        <div>
-            <section class="main-section"
-                     id="Introduction">
+        <div class="navbar-container">
+            <nav id="navbar">
                 <header>
-                    <h2>Introduction</h2>
+                    <h1>React documentation</h1>
+                    <ul>
+                        <li><a href="#Introduction"
+                               class="nav-link">Introduction</a></li>
+                        <li><a href="#JSX_Elements"
+                               class="nav-link">JSX Elements</a></li>
+                        <li><a href="#Components_and_Props"
+                               class="nav-link">Components and Props</a></li>
+                        <li><a href="#List_and_Keys"
+                               class="nav-link">List and Keys</a></li>
+                        <li><a href="#Event_Listeners_and_Handling_Events"
+                               class="nav-link">Event Listeners and Handling Events</a></li>
+                        <li><a href="#State_and_useState"
+                               class="nav-link">State and useState</a></li>
+                    </ul>
                 </header>
-                <p>React (also known as React.js or ReactJS) is a free and open-source front-end <strong>JavaScript
-                        library</strong> for building user
-                    interfaces based on <strong><abbr title="User Interface">UI</abbr></strong> components.</p>
-                <p>It is maintained by <strong>Meta</strong> (formerly Facebook) and
-                    a
-                    community of individual
-                    developers and companies.</p>
-                <p>React can be used as a base in the development of single-page or mobile
-                    applications. However, React is only concerned with state management and rendering that state to the
-                    <strong><abbr title="Document Object Model">DOM</abbr></strong>, so
-                    creating React applications usually requires the use of additional libraries for routing, as well as
-                    certain
-                    client-side functionality.
-                </p>
-            </section>
-            <section class="main-section"
-                     id="JSX_Elements">
-                <header>
-                    <h2>JSX Elements</h2>
-                </header>
-                <p>React applications are structured using a syntax called <abbr
-                          title="JavaScript Syntax Extension"><strong>JSX</strong></abbr>.
-                    This is the syntax of a basic <abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr>
-                    element.</p>
-                <code>
+            </nav>
+        </div>
+        <div class="sections-container">
+            <div>
+                <section class="main-section"
+                         id="Introduction">
+                    <header>
+                        <h2>Introduction</h2>
+                    </header>
+                    <p>React (also known as React.js or ReactJS) is a free and open-source front-end <strong>JavaScript
+                            library</strong> for building user
+                        interfaces based on <strong><abbr title="User Interface">UI</abbr></strong> components.</p>
+                    <p>It is maintained by <strong>Meta</strong> (formerly Facebook) and
+                        a
+                        community of individual
+                        developers and companies.</p>
+                    <p>React can be used as a base in the development of single-page or mobile
+                        applications. However, React is only concerned with state management and rendering that state to
+                        the
+                        <strong><abbr title="Document Object Model">DOM</abbr></strong>, so
+                        creating React applications usually requires the use of additional libraries for routing, as
+                        well as
+                        certain
+                        client-side functionality.
+                    </p>
+                </section>
+                <section class="main-section"
+                         id="JSX_Elements">
+                    <header>
+                        <h2>JSX Elements</h2>
+                    </header>
+                    <p>React applications are structured using a syntax called <abbr
+                              title="JavaScript Syntax Extension"><strong>JSX</strong></abbr>.
+                        This is the syntax of a basic <abbr
+                              title="JavaScript Syntax Extension"><strong>JSX</strong></abbr>
+                        element.</p>
+                    <code>
                     <pre>&lt;div&gt;Hello React!&lt;/div&gt;</pre>
                 </code>
-                <p><abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is the most common way to
-                    structure React applications,
-                    but it is not required for React.</p>
-                <code>
+                    <p><abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is the most common way to
+                        structure React applications,
+                        but it is not required for React.</p>
+                    <code>
                     <pre>React.createElement('div', null, 'Hello React!'); // createElement syntax</pre>
                 </code>
-                <p>
-                    <abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is not understood by the
-                    browser. It needs to be compiled to plain JavaScript, which the browser can understand.
-                <p>The most commonly used compiler for <abbr
-                          title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is called Babel.</p>
-                </p>
-                <p>Inline styles can be added to <strong><abbr>JSX</abbr></strong> elements using the style attribute.
-                    And styles are updated within
-                    an object, not a set of double quotes, as with <strong><abbr
-                              title="Hyper Text Markup Language">HTML</abbr></strong>.</p>
-                <p>Note that style property names must be also written in camelcase.</p>
-                <code>
+                    <p>
+                        <abbr title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is not understood by the
+                        browser. It needs to be compiled to plain JavaScript, which the browser can understand.
+                    <p>The most commonly used compiler for <abbr
+                              title="JavaScript Syntax Extension"><strong>JSX</strong></abbr> is called Babel.</p>
+                    </p>
+                    <p>Inline styles can be added to <strong><abbr>JSX</abbr></strong> elements using the style
+                        attribute.
+                        And styles are updated within
+                        an object, not a set of double quotes, as with <strong><abbr
+                                  title="Hyper Text Markup Language">HTML</abbr></strong>.</p>
+                    <p>Note that style property names must be also written in camelcase.</p>
+                    <code>
                     <pre>&lt;h1 style={{ color: 'blue', fontSize: 22, padding: '0.5em 1em' }}&gt;
     Hello React!
 &lt;/h1&gt;</pre>
                 </code>
-                <p>All React apps require three things:</p>
-                <ul>
-                    <li>
-                        <p><strong>ReactDOM.render()</strong>: used to render (show) our app by mounting it onto an
-                            <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong> element
-                        </p>
-                    </li>
-                    <li>
-                        <p><strong>A <strong><abbr title="JavaScript Extension">JSX</abbr></strong> element</strong>:
-                            called a "root node", because it is the root of our
-                            application. Meaning, rendering it will render all children within it</p>
-                    </li>
-                    <li>
-                        <p><strong>An <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong>
-                                (<strong><abbr title="Document Object Model">DOM</abbr></strong>) element</strong>:
-                            Where the app is inserted within an <strong><abbr
-                                      title="Hyper Text Markup Language">HTML</abbr></strong> page. The
-                            element is usually a div with an id of "root", located in an index.html file.</p>
-                    </li>
-                </ul>
-                <code>
+                    <p>All React apps require three things:</p>
+                    <ul>
+                        <li>
+                            <p><strong>ReactDOM.render()</strong>: used to render (show) our app by mounting it onto an
+                                <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong> element
+                            </p>
+                        </li>
+                        <li>
+                            <p><strong>A <strong><abbr title="JavaScript Extension">JSX</abbr></strong>
+                                    element</strong>:
+                                called a "root node", because it is the root of our
+                                application. Meaning, rendering it will render all children within it</p>
+                        </li>
+                        <li>
+                            <p><strong>An <strong><abbr title="Hyper Text Markup Language">HTML</abbr></strong>
+                                    (<strong><abbr title="Document Object Model">DOM</abbr></strong>) element</strong>:
+                                Where the app is inserted within an <strong><abbr
+                                          title="Hyper Text Markup Language">HTML</abbr></strong> page. The
+                                element is usually a div with an id of "root", located in an index.html file.</p>
+                        </li>
+                    </ul>
+                    <code>
                     <pre>
 import React from "react";
 import ReactDOM from "react-dom";
@@ -122,20 +130,22 @@ const App = &lt;h1&gt;Hello React!&lt;/h1&gt;
 
 ReactDOM.render(App, document.getElementById("root"));</pre>
                 </code>
-            </section>
-            <section class="main-section"
-                     id="Components_and_Props">
-                <header>
-                    <h2>Components and Props</h2>
-                </header>
-                <p><strong><abbr title="JavaScript Extension">JSX</abbr></strong> can be grouped together within
-                    individual functions called <strong>components.</strong></p>
-                <p>There are two types of components in React: <strong>function components</strong> and <strong>class
-                        components.</strong></p>
-                <p>Component names, for function or class components, are capitalized to distinguish them from plain
-                    JavaScript functions that do not return <strong><abbr
-                              title="JavaScript Extension">JSX</abbr></strong>:</p>
-                <code>
+                </section>
+                <section class="main-section"
+                         id="Components_and_Props">
+                    <header>
+                        <h2>Components and Props</h2>
+                    </header>
+                    <p><strong><abbr title="JavaScript Extension">JSX</abbr></strong> can be grouped together within
+                        individual functions called <strong>components.</strong></p>
+                    <p>There are two types of components in React: <strong>function components</strong> and
+                        <strong>class
+                            components.</strong>
+                    </p>
+                    <p>Component names, for function or class components, are capitalized to distinguish them from plain
+                        JavaScript functions that do not return <strong><abbr
+                                  title="JavaScript Extension">JSX</abbr></strong>:</p>
+                    <code>
                         <pre>import React from "react";
 
 /* 	
@@ -159,10 +169,10 @@ class Header extends React.Component {
   }
 }</pre>
                     </code>
-                <p>Components, despite being functions, are not called like ordinary JavaScript functions. They are
-                    executed by rendering them like we would <strong><abbr
-                              title="JavaScript Extension">JSX</abbr></strong> in our app.</p>
-                <code>
+                    <p>Components, despite being functions, are not called like ordinary JavaScript functions. They are
+                        executed by rendering them like we would <strong><abbr
+                                  title="JavaScript Extension">JSX</abbr></strong> in our app.</p>
+                    <code>
                     <pre>// Do we call this function component like a normal function?
 
 // No, to execute them and display the JSX they return...
@@ -172,12 +182,13 @@ const Header = () =&gt; &lt;h1&gt;Hello React&lt;/h1&gt;;
 ReactDOM.render(&lt;Header /&gt;, document.getElementById("root"));
 // renders: &lt;h1&gt;Hello React&lt;/h1&gt;</pre>
                 </code>
-                <p>Data passed to components in JavaScript are called <strong>props</strong>. Props look identical to
-                    attributes on plain
-                    JSX/HTML elements, but you can access their values within the component itself.</p>
-                <p>Props are available in parameters of the component to which they are passed. Props are always
-                    included as properties of an object.</p>
-                <code>
+                    <p>Data passed to components in JavaScript are called <strong>props</strong>. Props look identical
+                        to
+                        attributes on plain
+                        JSX/HTML elements, but you can access their values within the component itself.</p>
+                    <p>Props are available in parameters of the component to which they are passed. Props are always
+                        included as properties of an object.</p>
+                    <code>
                     <pre>/* 
   What if we want to pass custom data to our component from a parent component?
   For example, to display the user's name in our app header.
@@ -203,10 +214,10 @@ function Header(props) {
   return &lt;h1&gt;Hello {props.username}&lt;/h1&gt;;
 }</pre>
                 </code>
-                <p>The <strong>children</strong> prop is useful if we want to pass elements / components as props to
-                    other components.
-                </p>
-                <code>
+                    <p>The <strong>children</strong> prop is useful if we want to pass elements / components as props to
+                        other components.
+                    </p>
+                    <code>
                     <pre>// Can we accept React elements (or components) as props?
 // Yes, through a special property on the props object called 'children'
 
@@ -236,21 +247,22 @@ function AboutPage() {
   );
 }</pre>
                 </code>
-            </section>
-            <section class="main-section"
-                     id="List_and_Keys">
-                <header>
-                    <h2>List and Keys</h2>
-                </header>
-                <p>Use the <strong>.map()</strong> function to convert lists of data (arrays) into lists of elements.
-                </p>
-                <code>
+                </section>
+                <section class="main-section"
+                         id="List_and_Keys">
+                    <header>
+                        <h2>List and Keys</h2>
+                    </header>
+                    <p>Use the <strong>.map()</strong> function to convert lists of data (arrays) into lists of
+                        elements.
+                    </p>
+                    <code>
                     <pre>const people = ["John", "Bob", "Fred"];
 const peopleList = people.map(person => &lt;p&gt;{person}&lt;/p&gt;);</pre>
                 </code>
-                <p><strong>.map()</strong> can be used for components as well as plain <strong><abbr
-                              title="JavaScript Extension">JSX</abbr></strong> elements.</p>
-                <code>
+                    <p><strong>.map()</strong> can be used for components as well as plain <strong><abbr
+                                  title="JavaScript Extension">JSX</abbr></strong> elements.</p>
+                    <code>
                     <pre>function App() {
   const people = ['John', 'Bob', 'Fred'];
   // can interpolate returned list of elements in {}
@@ -267,15 +279,16 @@ function Person({ name }) {
   return &lt;p&gt;This person's name is: {name}&lt;/p&gt;;
 }</pre>
                 </code>
-                <p>Each React element within a list of elements needs a special <strong>key prop</strong>. Keys are
-                    essential for React
-                    to be able to keep track of each element that is being iterated over with the
-                    <strong>.map()</strong> function.
-                </p>
-                <p>React uses keys to performantly update individual elements when their data changes (instead of
-                    re-rendering the entire list).</p>
-                <p>Keys need to have unique values to be able to identify each of them according to their key value.</p>
-                <code>
+                    <p>Each React element within a list of elements needs a special <strong>key prop</strong>. Keys are
+                        essential for React
+                        to be able to keep track of each element that is being iterated over with the
+                        <strong>.map()</strong> function.
+                    </p>
+                    <p>React uses keys to performantly update individual elements when their data changes (instead of
+                        re-rendering the entire list).</p>
+                    <p>Keys need to have unique values to be able to identify each of them according to their key value.
+                    </p>
+                    <code>
                     <pre>function App() {
   const people = [
     { id: 'Ksy7py', name: 'John' },
@@ -306,20 +319,21 @@ function App() {
   );
 }</pre>
                 </code>
-            </section>
-            <section class="main-section"
-                     id="Event_Listeners_and_Handling_Events">
-                <header>
-                    <h2>Event Listeners and Handling Events</h2>
-                </header>
-                <p>Listening for events on <strong><abbr title="JavaScript Extension">JSX</abbr></strong> elements
-                    versus HTML elements differs in a few important ways.</p>
-                <p>First, you cannot listen for events on React components – only on <strong><abbr
-                              title="JavaScript Extension">JSX</abbr></strong> elements. Adding a prop called
-                    <strong>onClick</strong>, for example, to a React component would just be another property added to
-                    the props object.
-                </p>
-                <code>
+                </section>
+                <section class="main-section"
+                         id="Event_Listeners_and_Handling_Events">
+                    <header>
+                        <h2>Event Listeners and Handling Events</h2>
+                    </header>
+                    <p>Listening for events on <strong><abbr title="JavaScript Extension">JSX</abbr></strong> elements
+                        versus HTML elements differs in a few important ways.</p>
+                    <p>First, you cannot listen for events on React components – only on <strong><abbr
+                                  title="JavaScript Extension">JSX</abbr></strong> elements. Adding a prop called
+                        <strong>onClick</strong>, for example, to a React component would just be another property added
+                        to
+                        the props object.
+                    </p>
+                    <code>
                     <pre>/* 
   The convention for most event handler functions is to prefix them with the word 'handle' and then the action they perform (i.e. handleToggleTheme)
 */
@@ -340,24 +354,25 @@ function handleToggleTheme() {
   Toggle Theme
 &lt;/button&gt;</pre>
                 </code>
-                <p>The most essential React events to know are <strong>onClick</strong>, <strong>onChange</strong>, and
-                    <strong>onSubmit</strong>.
-                </p>
-                <ul>
-                    <li>
-                        <p><strong>onClick</strong> handles click events on <strong><abbr
-                                      title="JavaScript Extension">JSX</abbr></strong> elements
-                            (namely on buttons)</p>
-                    </li>
-                    <li>
-                        <p><strong>onChange</strong> handles keyboard events (namely a user typing into an input or
-                            textarea)</p>
-                    </li>
-                    <li>
-                        <p><strong>onSubmit</strong> handles form submissions from the user</p>
-                    </li>
-                </ul>
-                <code>
+                    <p>The most essential React events to know are <strong>onClick</strong>, <strong>onChange</strong>,
+                        and
+                        <strong>onSubmit</strong>.
+                    </p>
+                    <ul>
+                        <li>
+                            <p><strong>onClick</strong> handles click events on <strong><abbr
+                                          title="JavaScript Extension">JSX</abbr></strong> elements
+                                (namely on buttons)</p>
+                        </li>
+                        <li>
+                            <p><strong>onChange</strong> handles keyboard events (namely a user typing into an input or
+                                textarea)</p>
+                        </li>
+                        <li>
+                            <p><strong>onSubmit</strong> handles form submissions from the user</p>
+                        </li>
+                    </ul>
+                    <code>
                     <pre>function App() {
   function handleInputChange(event) {
     /* When passing the function to an event handler, like onChange we get access to data about the event (an object) */
@@ -390,25 +405,27 @@ function handleToggleTheme() {
   );
 }</pre>
                 </code>
-            </section>
-            <section class="main-section"
-                     id="State_and_useState">
-                <header>
-                    <h2>State and useState</h2>
-                </header>
-                <p>The <strong>useState</strong> hook gives us state in a function component. <strong>State</strong>
-                    allows us to access and update
-                    certain
-                    values in our components over time.</p>
-                <p>Local component state is managed by the React hook <strong>useState</strong> which gives us both a
-                    state variable and
-                    a
-                    function that allows us to update it.</p>
-                <p>When we call <strong>useState</strong> we can give our state a default value by providing it as the
-                    first argument
-                    when
-                    we call <strong>useState</strong>.</p>
-                <code>
+                </section>
+                <section class="main-section"
+                         id="State_and_useState">
+                    <header>
+                        <h2>State and useState</h2>
+                    </header>
+                    <p>The <strong>useState</strong> hook gives us state in a function component. <strong>State</strong>
+                        allows us to access and update
+                        certain
+                        values in our components over time.</p>
+                    <p>Local component state is managed by the React hook <strong>useState</strong> which gives us both
+                        a
+                        state variable and
+                        a
+                        function that allows us to update it.</p>
+                    <p>When we call <strong>useState</strong> we can give our state a default value by providing it as
+                        the
+                        first argument
+                        when
+                        we call <strong>useState</strong>.</p>
+                    <code>
                         <pre>import React from 'react';
 
 /* 
@@ -425,8 +442,8 @@ function App() {
   return &lt;div&gt;I am learning {language}&lt;/div&gt;;
 }</pre>
                     </code>
-                <p>useState also gives us a 'setter' function to update the state after it is created.</p>
-                <code>
+                    <p>useState also gives us a 'setter' function to update the state after it is created.</p>
+                    <code>
                     <pre>function App() {
   /* 
    The setter function is always the second destructured value.
@@ -454,7 +471,8 @@ function App() {
  Whenever state is updated, the component will be re-rendered
 */</pre>
                 </code>
-            </section>
+                </section>
+            </div>
         </div>
     </main>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
