@@ -236,6 +236,69 @@ function AboutPage() {
                 <header>
                     <h2>List and Keys</h2>
                 </header>
+                <p>Use the <strong>.map()</strong> function to convert lists of data (arrays) into lists of elements.
+                </p>
+                <code>
+                    <pre>const people = ["John", "Bob", "Fred"];
+const peopleList = people.map(person => &lt;p&gt;{person}&lt;/p&gt;);</pre>
+                </code>
+                <p><strong>.map()</strong> can be used for components as well as plain <strong><abbr
+                              title="JavaScript Extension">JSX</abbr></strong> elements.</p>
+                <code>
+                    <pre>function App() {
+  const people = ['John', 'Bob', 'Fred'];
+  // can interpolate returned list of elements in {}
+  return (
+    &lt;ul&gt;
+      {/* we're passing each array element as props to Person */}
+      {people.map(person =&gt; &lt;Person name={person} /&gt;}
+    &lt;/ul&gt;
+  );
+}
+
+function Person({ name }) {
+  // we access the 'name' prop directly using object destructuring
+  return &lt;p&gt;This person's name is: {name}&lt;/p&gt;;
+}</pre>
+                </code>
+                <p>Each React element within a list of elements needs a special <strong>key prop</strong>. Keys are
+                    essential for React
+                    to be able to keep track of each element that is being iterated over with the
+                    <strong>.map()</strong> function.</p>
+                <p>React uses keys to performantly update individual elements when their data changes (instead of
+                    re-rendering the entire list).</p>
+                <p>Keys need to have unique values to be able to identify each of them according to their key value.</p>
+                <code>
+                    <pre>function App() {
+  const people = [
+    { id: 'Ksy7py', name: 'John' },
+    { id: '6eAdl9', name: 'Bob' },
+    { id: '6eAdl9', name: 'Fred' },
+  ];
+
+  return (
+    &lt;ul&gt;
+      {/* keys need to be primitive values, ideally a unique string, such as an id */}
+      {people.map(person =&gt;
+         &lt;Person key={person.id} name={person.name} /&gt;
+      )}
+    &lt;/ul&gt;
+  );
+}
+
+// If you don't have some ids with your set of data that are unique // and primitive values, use the second parameter of .map() to get each // elements index
+
+function App() {
+  const people = ['John', 'Bob', 'Fred'];
+
+  return (
+    &lt;ul&gt;
+      {/* use array element index for key */}
+      {people.map((person, i) =&gt; &lt;Person key={i} name={person} /&gt;)}
+    &lt;/ul&gt;
+  );
+}</pre>
+                </code>
             </section>
             <section class="main-section"
                      id="Event_Listeners_and_Handling_Events">
