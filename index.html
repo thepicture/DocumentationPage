@@ -122,7 +122,115 @@ ReactDOM.render(App, document.getElementById("root"));</pre>
                      id="Components_and_Props">
                 <header>
                     <h2>Components and Props</h2>
-                </header></section>
+                </header>
+                <p>JSX can be grouped together within individual functions called <strong>components.</strong></p>
+                <p>There are two types of components in React: <strong>function components</strong> and <strong>class
+                        components.</strong></p>
+                <p>Component names, for function or class components, are capitalized to distinguish them from plain
+                    JavaScript functions that do not return <strong><abbr
+                              title="JavaScript Extension">JSX</abbr></strong>:</p>
+                <code>
+                        <pre>import React from "react";
+
+/* 	
+  Function component
+  Note the capitalized function name: 'Header', not 'header'
+*/
+function Header() {
+  return &lt;h1&gt;Hello React&lt;/h1&gt;;
+}
+
+// Function components which use an arrow function syntax are also valid
+const Header = () =&gt; &lt;h1&gt;Hello React&lt;/h1&gt;;
+
+/* 
+  Class component
+  Class components have more boilerplate (note the 'extends' keyword and 'render' method)
+*/
+class Header extends React.Component {
+  render() {
+    return &lt;h1&gt;Hello React&lt;/h1&gt;;
+  }
+}</pre>
+                    </code>
+                <p>Components, despite being functions, are not called like ordinary JavaScript functions. They are
+                    executed by rendering them like we would <strong><abbr
+                              title="JavaScript Extension">JSX</abbr></strong> in our app.</p>
+                <code>
+                    <pre>// Do we call this function component like a normal function?
+
+// No, to execute them and display the JSX they return...
+const Header = () =&gt; &lt;h1&gt;Hello React&lt;/h1&gt;;
+
+// ...we use them as 'custom' JSX elements
+ReactDOM.render(&lt;Header /&gt;, document.getElementById("root"));
+// renders: &lt;h1&gt;Hello React&lt;/h1&gt;</pre>
+                </code>
+                <p>Data passed to components in JavaScript are called <strong>props</strong>. Props look identical to
+                    attributes on plain
+                    JSX/HTML elements, but you can access their values within the component itself.</p>
+                <p>Props are available in parameters of the component to which they are passed. Props are always
+                    included as properties of an object.</p>
+                <code>
+                    <pre>/* 
+  What if we want to pass custom data to our component from a parent component?
+  For example, to display the user's name in our app header.
+*/
+
+const username = "John";
+
+/* 
+  To do so, we add custom 'attributes' to our component called props.
+  We can add many of them as we like and we give them names that suit the data we pass in.
+  To pass the user's name to the header, we use a prop we appropriately called 'username'
+*/
+ReactDOM.render(
+  &lt;Header username={username} /&gt;,
+  document.getElementById("root")
+);
+// We called this prop 'username', but can use any valid identifier we would give, for example, a JavaScript variable
+
+// props is the object that every component receives as an argument
+function Header(props) {
+  // the props we make on the component (username)
+  // become properties on the props object
+  return &lt;h1&gt;Hello {props.username}&lt;/h1&gt;;
+}</pre>
+                </code>
+                <p>The <strong>children</strong> prop is useful if we want to pass elements / components as props to
+                    other components.
+                </p>
+                <code>
+                    <pre>// Can we accept React elements (or components) as props?
+// Yes, through a special property on the props object called 'children'
+
+function Layout(props) {
+  return &lt;div className="container"&gt;{props.children}&lt;/div&gt;;
+}
+
+// The children prop is very useful for when you want the same
+// component (such as a Layout component) to wrap all other components:
+function IndexPage() {
+  return (
+    &lt;Layout&gt;
+      &lt;Header /&gt;
+      &lt;Hero /&gt;
+      &lt;Footer /&gt;
+    &lt;/Layout&gt;
+  );
+}
+
+// different page, but uses same Layout component (thanks to children prop)
+function AboutPage() {
+  return (
+    &lt;Layout&gt;
+      &lt;About /&gt;
+      &lt;Footer /&gt;
+    &lt;/Layout&gt;
+  );
+}</pre>
+                </code>
+            </section>
             <section class="main-section"
                      id="List_and_Keys">
                 <header>
