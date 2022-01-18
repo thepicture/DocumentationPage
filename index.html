@@ -123,7 +123,8 @@ ReactDOM.render(App, document.getElementById("root"));</pre>
                 <header>
                     <h2>Components and Props</h2>
                 </header>
-                <p>JSX can be grouped together within individual functions called <strong>components.</strong></p>
+                <p><strong><abbr title="JavaScript Extension">JSX</abbr></strong> can be grouped together within
+                    individual functions called <strong>components.</strong></p>
                 <p>There are two types of components in React: <strong>function components</strong> and <strong>class
                         components.</strong></p>
                 <p>Component names, for function or class components, are capitalized to distinguish them from plain
@@ -264,7 +265,8 @@ function Person({ name }) {
                 <p>Each React element within a list of elements needs a special <strong>key prop</strong>. Keys are
                     essential for React
                     to be able to keep track of each element that is being iterated over with the
-                    <strong>.map()</strong> function.</p>
+                    <strong>.map()</strong> function.
+                </p>
                 <p>React uses keys to performantly update individual elements when their data changes (instead of
                     re-rendering the entire list).</p>
                 <p>Keys need to have unique values to be able to identify each of them according to their key value.</p>
@@ -305,6 +307,84 @@ function App() {
                 <header>
                     <h2>Event Listeners and Handling Events</h2>
                 </header>
+                <p>Listening for events on <strong><abbr title="JavaScript Extension">JSX</abbr></strong> elements
+                    versus HTML elements differs in a few important ways.</p>
+                <p>First, you cannot listen for events on React components – only on <strong><abbr
+                              title="JavaScript Extension">JSX</abbr></strong> elements. Adding a prop called
+                    <strong>onClick</strong>, for example, to a React component would just be another property added to
+                    the props object.
+                </p>
+                <code>
+                    <pre>/* 
+  The convention for most event handler functions is to prefix them with the word 'handle' and then the action they perform (i.e. handleToggleTheme)
+*/
+function handleToggleTheme() {
+  // code to toggle app theme
+}
+
+/* In HTML, onclick is all lowercase, plus the event handler includes a set of parentheses after being referenced */
+&lt;button onclick="handleToggleTheme()"&gt;
+  Toggle Theme
+&lt;/button&gt;
+
+/* 
+  In JSX, onClick is camelcase, like attributes / props.
+  We also pass a reference to the function with curly braces.
+*/
+&lt;button onClick={handleToggleTheme}&gt;
+  Toggle Theme
+&lt;/button&gt;</pre>
+                </code>
+                <p>The most essential React events to know are <strong>onClick</strong>, <strong>onChange</strong>, and
+                    <strong>onSubmit</strong>.
+                </p>
+                <ul>
+                    <li>
+                        <p><strong>onClick</strong> handles click events on <strong><abbr
+                                      title="JavaScript Extension">JSX</abbr></strong> elements
+                            (namely on buttons)</p>
+                    </li>
+                    <li>
+                        <p><strong>onChange</strong> handles keyboard events (namely a user typing into an input or
+                            textarea)</p>
+                    </li>
+                    <li>
+                        <p><strong>onSubmit</strong> handles form submissions from the user</p>
+                    </li>
+                </ul>
+                <code>
+                    <pre>function App() {
+  function handleInputChange(event) {
+    /* When passing the function to an event handler, like onChange we get access to data about the event (an object) */
+    const inputText = event.target.value; // text typed into the input
+    const inputName = event.target.name; // 'email' from name attribute
+  }
+
+  function handleClick(event) {
+    /* onClick doesn't usually need event data, but it receives event data as well that we can use */
+    console.log('clicked!');
+    const eventType = event.type; // "click"
+    const eventTarget = event.target; // &lt;button&gt;Submit&lt;/button&gt;
+  }
+    
+  function handleSubmit(event) {
+    /* 
+     When we hit the return button, the form will be submitted, as well as when a button with type="submit" is clicked.
+     We call event.preventDefault() to prevent the default form behavior from taking place, which is to send an HTTP request and reload the page.
+    */
+    event.preventDefault();
+    const formElements = event.target.elements; // access all element within form
+    const inputValue = event.target.elements.emailAddress.value; // access the value of the input element with the id "emailAddress"
+  }
+
+  return (
+    &lt;form onSubmit={handleSubmit}&gt;
+      &lt;input id="emailAddress" type="email" name="email" onChange={handleInputChange} /&gt;
+      &lt;button onClick={handleClick}&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}</pre>
+                </code>
             </section>
             <section class="main-section"
                      id="State_and_useState">
