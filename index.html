@@ -391,6 +391,64 @@ function handleToggleTheme() {
                 <header>
                     <h2>State and useState</h2>
                 </header>
+                <p>The <strong>useState</strong> hook gives us state in a function component. <strong>State</strong>
+                    allows us to access and update
+                    certain
+                    values in our components over time.</p>
+                <p>Local component state is managed by the React hook <strong>useState</strong> which gives us both a
+                    state variable and
+                    a
+                    function that allows us to update it.</p>
+                <p>When we call <strong>useState</strong> we can give our state a default value by providing it as the
+                    first argument
+                    when
+                    we call <strong>useState</strong>.</p>
+                <code>
+                        <pre>import React from 'react';
+
+/* 
+  How do you create a state variable?
+  Syntax: const [stateVariable] = React.useState(defaultValue);
+*/
+function App() {
+  const [language] = React.useState('JavaScript');
+  /* 
+    We use array destructuring to declare state variable.
+    Like any variable, we declare we can name it what we like (in this case, 'language').
+  */
+
+  return &lt;div&gt;I am learning {language}&lt;/div&gt;;
+}</pre>
+                    </code>
+                <p>useState also gives us a 'setter' function to update the state after it is created.</p>
+                <code>
+                    <pre>function App() {
+  /* 
+   The setter function is always the second destructured value.
+   The naming convention for the setter function is to be prefixed with 'set'.
+  */
+  const [language, setLanguage] = React.useState("javascript");
+
+  return (
+    &lt;div&gt;
+      &lt;button onClick={() =&gt; setLanguage("python")}&gt;
+        Learn Python
+      &lt;/button&gt;
+      {/*  
+        Why use an inline arrow function here instead of immediately calling it like so: onClick={setterFn()}? 
+        If so, setLanguage would be called immediately and not when the button was clicked by the user.
+        */}
+      &lt;p&gt;I am now learning {language}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}
+
+/* 
+ Note: whenever the setter function is called, the state updates,
+ and the App component re-renders to display the new state.
+ Whenever state is updated, the component will be re-rendered
+*/</pre>
+                </code>
             </section>
             <section class="main-section"
                      id="Side_Effects_and_useEffect">
