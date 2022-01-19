@@ -25,14 +25,14 @@ p:not(:last-child) {
     line-height: 150%;
 }
 
-.navbar-container nav, .sections-container div, pre {
+.navbar-container nav, .sections-container, pre {
     background-color: white;
     border-radius: .5em;
     box-shadow: 0px 2px 4px 0 rgb(0 0 0 / 20%);
     padding: 2em;
 }
 
-.sections-container div {
+.sections-container {
     position: absolute;
     width: 60%;
     height: auto;
