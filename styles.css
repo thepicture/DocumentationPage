@@ -57,6 +57,7 @@ a {
     text-decoration: none;
     font-weight: bold;
     transition: all 50ms;
+    color: mediumslateblue;
 }
 
 .navbar-container {
